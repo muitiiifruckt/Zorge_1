@@ -35,6 +35,8 @@
             this.richTextBox4 = new System.Windows.Forms.RichTextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.richTextBox5 = new System.Windows.Forms.RichTextBox();
             this.SuspendLayout();
             // 
             // richTextBox1
@@ -86,7 +88,7 @@
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(18, 180);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(41, 16);
+            this.label1.Size = new System.Drawing.Size(107, 16);
             this.label1.TabIndex = 2;
             this.label1.Text = "Ключ из 6 букв ";
             // 
@@ -95,20 +97,39 @@
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(18, 236);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(304, 16);
+            this.label2.Size = new System.Drawing.Size(320, 16);
             this.label2.TabIndex = 2;
-            this.label2.Text = "Анаграмма из наиболее встречающихся букв \"a s i n t o e r\" ";
+            this.label2.Text = "Анаграмма из наиболее встречающихся, 8 букв ";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(529, 276);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(152, 16);
+            this.label3.TabIndex = 4;
+            this.label3.Text = "random_gamma_len_20";
+            // 
+            // richTextBox5
+            // 
+            this.richTextBox5.Location = new System.Drawing.Point(687, 255);
+            this.richTextBox5.Name = "richTextBox5";
+            this.richTextBox5.Size = new System.Drawing.Size(175, 37);
+            this.richTextBox5.TabIndex = 0;
+            this.richTextBox5.Text = "";
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(927, 518);
+            this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.encrypt_btn);
             this.Controls.Add(this.richTextBox2);
             this.Controls.Add(this.richTextBox4);
+            this.Controls.Add(this.richTextBox5);
             this.Controls.Add(this.richTextBox3);
             this.Controls.Add(this.richTextBox1);
             this.Name = "Form1";
@@ -127,6 +148,8 @@
         private System.Windows.Forms.RichTextBox richTextBox4;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.RichTextBox richTextBox5;
     }
 }
 

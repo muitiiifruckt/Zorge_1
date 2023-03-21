@@ -29,6 +29,7 @@ namespace Zorge_1
         }
         private void encrypt(string key, string anagramma)
         {
+            richTextBox2.Text = "";
             text_1 = richTextBox1.Text.ToLower();//
             foreach( char p in text_1)//очитска от лишних символов
             {
@@ -101,7 +102,7 @@ namespace Zorge_1
                 }
                 else// если это  НЕ число
                 {
-                    if (!(S[S.Length-2]=='9' && S[S.Length - 1] == '4') && !is_first_number)
+                    if (S.Length> 1 && !(S[S.Length-2]=='9' && S[S.Length - 1] == '4') && !is_first_number)
                     {
                         S += "94";
                     }
@@ -131,8 +132,16 @@ namespace Zorge_1
             }
             if (string_in(text[text.Length-1],numbers)) // если последний символ был цифрой 
                 S += "94";
+            // XOR with random gamma
+            string gamma_len_20 = get_random_gamma_20();
 
-            richTextBox2.Text= S;
+            string SSSS = "";
+            for(int i = 0;i<S.Length;i++)
+            {
+                SSSS += ((int)S[i] + (int)gamma_len_20[i % gamma_len_20.Length]) % 10;
+            }
+            richTextBox5.Text = Convert.ToString(gamma_len_20);
+            richTextBox2.Text= SSSS;
         }
         
         private void create_table()
@@ -227,6 +236,24 @@ namespace Zorge_1
             key = richTextBox3.Text;
             anagramma = richTextBox4.Text;
             encrypt(key, anagramma); // запуск
+        }
+        private string get_random_gamma_20()
+        {
+            string binar_key = "";
+            string random_counts_for_key = "";
+            ///
+            while (random_counts_for_key.Length != 20)
+            {
+                Random rnd = new Random();
+                int num = rnd.Next(0, 20);
+                if (!string_in((char)num, random_counts_for_key))
+                    random_counts_for_key += (char)num;
+
+            }
+            
+            //
+            return random_counts_for_key;
+
         }
     }
 }
